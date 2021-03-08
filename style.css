@@ -14,7 +14,7 @@ a {color: #191d20;}
     height: 100vh;
 }
 .myCard {
-    width: 250px;
+    width: 300px;
     background: rgb(43,51,56);
     background: -moz-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
     background: -webkit-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
