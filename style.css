@@ -1,0 +1,81 @@
+* {
+    font-weight: bold;
+}
+:root {
+    --main-bg-color: #1F2033;
+    --secondary-color: #2b3338;
+}
+a {color: #191d20;}
+.main {
+    height: 100vh;
+    background: var(--main-bg-color);
+}
+.container {
+    height: 100vh;
+}
+.myCard {
+    width: 250px;
+    background: rgb(43,51,56);
+    background: -moz-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
+    background: linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2b3338",endColorstr="#191d20",GradientType=1);
+    border-radius: 30px;
+    box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+}
+label {
+    cursor: pointer;
+    position: relative;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 234px;
+    min-height: 40px;
+    border-radius: 4px;
+    padding: 5px;
+    background: rgb(151,97,185);
+    background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0%;
+    margin-top: 8px;
+    /* margin-left: -60px; */
+}
+label:hover .tooltiptext {
+    visibility: visible;
+}
+.text-gradient {
+    color: rgb(151,97,185);
+    color: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    color: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    color: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
+}
+.gradient {
+    background: rgb(151,97,185);
+    background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
+    transition: opacity 0.3s ease-in-out;
+}
+.cardText {
+    color: lightgrey;
+}
+.myButton {
+    border: none;
+    border-radius: 6px;
+    width: 70px;
+    height: 30px;
+}
+.myButton:hover {
+    opacity: 0.8;
+}
