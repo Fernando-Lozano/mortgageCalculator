@@ -1,20 +1,16 @@
-* {
-    font-weight: bold;
-}
 :root {
     --main-bg-color: #1F2033;
     --secondary-color: #2b3338;
 }
 a {color: #191d20;}
 .main {
+    min-height: 800px;
     height: 100vh;
     background: var(--main-bg-color);
 }
-.container {
-    height: 100vh;
-}
 .myCard {
     width: 300px;
+    margin-top: 40px;
     background: rgb(43,51,56);
     background: -moz-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
     background: -webkit-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
@@ -28,6 +24,7 @@ a {color: #191d20;}
 label {
     cursor: pointer;
     position: relative;
+    font-weight: bold;
 }
 .tooltiptext {
     visibility: hidden;
@@ -44,7 +41,7 @@ label {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    top: 100%;
+    bottom: 0%;
     left: 0%;
     margin-top: 8px;
     /* margin-left: -60px; */
@@ -73,8 +70,8 @@ label:hover .tooltiptext {
 .myButton {
     border: none;
     border-radius: 6px;
-    width: 70px;
-    height: 30px;
+    width: 80px;
+    height: 35px;
 }
 .myButton:hover {
     opacity: 0.8;
