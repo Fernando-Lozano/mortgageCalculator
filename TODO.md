@@ -1,6 +1,4 @@
-make form a card
-
-make publicly accessable
+Fill proper info in the info icons--add brevity. reference chmc
 
 might need to use recursion to find result after 25 years
 

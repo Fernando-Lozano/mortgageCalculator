@@ -1,14 +1,15 @@
-:root {
-    --main-bg-color: #1F2033;
-    --secondary-color: #2b3338;
+html {
+    box-sizing: border-box;
 }
-a {color: #191d20;}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 .main {
-    min-height: 800px;
-    height: 100vh;
-    background: var(--main-bg-color);
+    min-height: 100vh;
+    background: #1F2033;
 }
-.myCard {
+/* gradient colors:  #9D67B5, #460FE3*/
+.calculator {
     width: 300px;
     margin-top: 40px;
     background: rgb(43,51,56);
@@ -21,17 +22,21 @@ a {color: #191d20;}
     -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
     -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
 }
-label {
-    cursor: pointer;
+/* @media (orientation: landscape) {
+    .main {
+        min-height: 600px;
+    }
+} */
+label, .description {
     position: relative;
     font-weight: bold;
 }
 .tooltiptext {
     visibility: hidden;
     width: 234px;
-    min-height: 40px;
+    /* min-height: 38px; */
     border-radius: 4px;
-    padding: 5px;
+    padding: 12px 5px;
     background: rgb(151,97,185);
     background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
     background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
@@ -41,12 +46,15 @@ label {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    bottom: 0%;
+    top: 100%;
     left: 0%;
     margin-top: 8px;
     /* margin-left: -60px; */
 }
-label:hover .tooltiptext {
+i {
+    cursor: pointer;
+}
+i:hover .tooltiptext {
     visibility: visible;
 }
 .text-gradient {
@@ -56,23 +64,41 @@ label:hover .tooltiptext {
     color: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
 }
-.gradient {
-    background: rgb(151,97,185);
-    background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    background: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
+.bgGradient {
+    opacity: 0.8;
+    background: rgb(208,137,240);
+    background: -moz-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    background: linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d089f0",endColorstr="#4c10f7",GradientType=1);
     transition: opacity 0.3s ease-in-out;
 }
-.cardText {
+.cardText, .description {
     color: lightgrey;
 }
 .myButton {
     border: none;
     border-radius: 6px;
-    width: 80px;
+    padding: 0 10px;
     height: 35px;
 }
 .myButton:hover {
-    opacity: 0.8;
+    opacity: 1;
+}
+.result {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+}
+.description {
+    display: inline-block;
+    width: 80%;
+    background: rgb(43,51,56);
+    border-radius: 25px 0 0 25px;
+}
+.answer {
+    display: inline-block;
+    width: 20%;
+    border-radius: 0 25px 25px 0;
 }
