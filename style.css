@@ -4,9 +4,9 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-.main {
+body {
     min-height: 100vh;
-    background: #1F2033;
+    background: #1F2033 !important;
 }
 /* gradient colors:  #9D67B5, #460FE3*/
 .calculator {

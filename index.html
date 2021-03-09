@@ -12,76 +12,74 @@
     <title>Mortgage</title>
 </head>
 <body>
-    <div class="main">
-        <div class="container d-flex justify-content-center">
-            <div class="calculator">
-                <h1 class="display-5 px-3 py-3 text-center cardText">Mortgage</h1>
-                <form class="px-2">
-                    <div class="mb-3">
-                        <label for="purchasePrice" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Purchase Price</label>
-                        <input type="number" class="form-control" id="purchasePrice" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="downPayment" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The percentage of the purchase price you plan to pay</span></i> Down payment</label>
-                        <input type="number" class="form-control" id="downPayment">
-                    </div>
-                    <div class="mb-3">
-                        <label for="interestRate" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">This calculation is assuming this will stay the same</span></i> Interest rate</label>
-                        <input type="number" class="form-control" id="interestRate">
-                    </div>
-                    <div class="mb-3">
-                        <label for="amortize" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The amount of time it will take to pay off the mortgage</span></i> Amortization period</label>
-                        <select class="form-select" aria-label="Default select example" id="amortize">
-                            <option selected value="25">25 years</option>
-                            <option value="5">5 years</option>
-                            <option value="10">10 years</option>
-                            <option value="20">20 years</option>
-                        </select>
-                    </div>
-                    <div class="text-center mt-3 mb-2">
-                        <button type="submit" class="myButton bgGradient fw-bold cardText">Submit</button>
-                    </div>
-                </form>
+    <div class="container d-flex justify-content-center">
+        <div class="calculator">
+            <h1 class="display-5 px-3 py-3 text-center cardText">Mortgage</h1>
+            <form class="px-2">
+                <div class="mb-3">
+                    <label for="purchasePrice" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Purchase Price</label>
+                    <input type="number" class="form-control" id="purchasePrice" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="downPayment" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The percentage of the purchase price you plan to pay</span></i> Down payment</label>
+                    <input type="number" class="form-control" id="downPayment">
+                </div>
+                <div class="mb-3">
+                    <label for="interestRate" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">This calculation is assuming this will stay the same</span></i> Interest rate</label>
+                    <input type="number" class="form-control" id="interestRate">
+                </div>
+                <div class="mb-3">
+                    <label for="amortize" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The amount of time it will take to pay off the mortgage</span></i> Amortization period</label>
+                    <select class="form-select" aria-label="Default select example" id="amortize">
+                        <option selected value="25">25 years</option>
+                        <option value="5">5 years</option>
+                        <option value="10">10 years</option>
+                        <option value="20">20 years</option>
+                    </select>
+                </div>
+                <div class="text-center mt-3 mb-2">
+                    <button type="submit" class="myButton bgGradient fw-bold cardText">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="results d-flex justify-content-center text-center text-white container mt-5">
+        <div class="result d-flex">
+            <div class="description px-2">
+                <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Monthly payments</p>
+            </div>
+            <div class="answer bgGradient">
+                <p class="my-2">$500.00</p>
             </div>
         </div>
-        <div class="results d-flex justify-content-center text-center text-white container mt-5">
-            <div class="result d-flex">
-                <div class="description px-2">
-                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Monthly payments</p>
-                </div>
-                <div class="answer bgGradient">
-                    <p class="my-2">$500.00</p>
-                </div>
+    </div>
+    <div class="results d-flex justify-content-center text-center text-white container mt-4">
+        <div class="result d-flex">
+            <div class="description px-2">
+                <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Final amount payed</p>
+            </div>
+            <div class="answer bgGradient">
+                <p class="my-2">$500.00</p>
             </div>
         </div>
-        <div class="results d-flex justify-content-center text-center text-white container mt-4">
-            <div class="result d-flex">
-                <div class="description px-2">
-                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Final amount payed</p>
-                </div>
-                <div class="answer bgGradient">
-                    <p class="my-2">$500.00</p>
-                </div>
+    </div>
+    <div class="results d-flex justify-content-center text-center text-white container mt-4">
+        <div class="result d-flex">
+            <div class="description px-2">
+                <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Cost of CHMC</p>
+            </div>
+            <div class="answer bgGradient">
+                <p class="my-2">$500.00</p>
             </div>
         </div>
-        <div class="results d-flex justify-content-center text-center text-white container mt-4">
-            <div class="result d-flex">
-                <div class="description px-2">
-                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Cost of CHMC</p>
-                </div>
-                <div class="answer bgGradient">
-                    <p class="my-2">$500.00</p>
-                </div>
+    </div>
+    <div class="results d-flex justify-content-center text-center text-white container mt-4 pb-5">
+        <div class="result d-flex">
+            <div class="description px-2">
+                <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Amount of interest payed</p>
             </div>
-        </div>
-        <div class="results d-flex justify-content-center text-center text-white container mt-4 pb-5">
-            <div class="result d-flex">
-                <div class="description px-2">
-                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost of the property.</span></i> Amount of interest payed</p>
-                </div>
-                <div class="answer bgGradient">
-                    <p class="my-2">$500.00</p>
-                </div>
+            <div class="answer bgGradient">
+                <p class="my-2">$500.00</p>
             </div>
         </div>
     </div>
