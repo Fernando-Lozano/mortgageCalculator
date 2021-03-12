@@ -11,7 +11,6 @@ body {
 /* gradient colors:  #9D67B5, #460FE3*/
 .calculator {
     width: 300px;
-    margin-top: 40px;
     background: rgb(43,51,56);
     background: -moz-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
     background: -webkit-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
@@ -49,13 +48,15 @@ label, .description {
     top: 100%;
     left: 0%;
     margin-top: 8px;
-    /* margin-left: -60px; */
 }
 i {
     cursor: pointer;
 }
-i:hover .tooltiptext {
+i:hover .tooltiptext, i:hover .tooltiptextLast {
     visibility: visible;
+}
+.input-group-text {
+    color: lightgray !important;
 }
 .text-gradient {
     color: rgb(151,97,185);
@@ -90,15 +91,43 @@ i:hover .tooltiptext {
     max-width: 600px;
     margin: 0;
     padding: 0;
+    
 }
 .description {
     display: inline-block;
-    width: 80%;
+    /* width: 70%; */
+    flex-grow: 1;
     background: rgb(43,51,56);
     border-radius: 25px 0 0 25px;
+    box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
 }
 .answer {
     display: inline-block;
-    width: 20%;
+    min-width: 20%;
+    padding: 0 8px;
     border-radius: 0 25px 25px 0;
+    box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+    -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
+}
+.tooltiptextLast {
+    visibility: hidden;
+    width: 234px;
+    /* min-height: 38px; */
+    border-radius: 4px;
+    padding: 12px 5px;
+    background: rgb(151,97,185);
+    background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    background: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 0%;
+    margin-bottom: 8px;
 }

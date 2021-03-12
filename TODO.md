@@ -1,8 +1,3 @@
-add box shado to result bars
-
-might need to adjust description/result divs to fit a higher number
-
-Fill proper info in the info icons--add brevity. reference chmc
 
 might need to use recursion to find result after 25 years
 
