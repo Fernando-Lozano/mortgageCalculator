@@ -105,13 +105,19 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
 }
 .answer {
     display: inline-block;
-    min-width: 20%;
+    min-width: 25%;
     padding: 0 8px;
     border-radius: 0 25px 25px 0;
     box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
     -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
     -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
 }
+@media (max-width: 767.98px) {
+    .answer {
+        min-width: 30%;
+    }
+}
+
 .tooltiptextLast {
     visibility: hidden;
     width: 234px;

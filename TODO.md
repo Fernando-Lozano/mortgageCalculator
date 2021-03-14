@@ -1,7 +1,6 @@
+make lower info buttons bigger
 
-might need to use recursion to find result after 25 years
-
-refer to chmc's calculator
+hide answers and then add effects to insert them in a cascading effect
 
 how to calculate:
     https://www.businessinsider.com/personal-finance/how-to-calculate-mortgage-payment#4.-find-out-whether-you-need-private-mortgage-insurance
