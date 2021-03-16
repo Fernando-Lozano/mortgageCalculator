@@ -1,4 +1,6 @@
 const form = document.querySelector("form");
+const section = document.querySelector("section");
+const displayDivs = document.querySelectorAll(".results");
 const displays = {
     payments: document.querySelector("#payments"),
     payed: document.querySelector("#payed"),
@@ -32,7 +34,11 @@ function calculate({price, down, interest, period}) {
     let payments = ((price * monthInterest * ((1 + monthInterest) ** (12 * period))) / ((1 + monthInterest) ** (12 * period) - 1)).toFixed(2);
     let finalCost = (payments * months).toFixed(2);
 
-    // display all results
+    section.classList.remove("d-none");
+    // displays all div displays
+    displayEffect();
+
+    // displays results
     displays.payments.textContent = numberWithSpaces(payments);
     displays.payed.textContent = numberWithSpaces(finalCost);
     displays.insurance.textContent = numberWithSpaces(premiumCost.toFixed(2));
@@ -65,4 +71,13 @@ function numberWithSpaces(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     return parts.join(".");
+}
+async function displayEffect() {
+    for (let display of displayDivs) {
+        await new Promise(r => setTimeout(r, 200));
+        display.classList.add("displayResults");
+    }
+    await new Promise(r => setTimeout(r, 1000));
+    section.classList.remove("overflowHide");
+    displayDivs[0].scrollIntoView({ behavior: 'smooth' });
 }

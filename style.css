@@ -5,7 +5,7 @@ html {
     box-sizing: inherit;
 }
 body {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background: #1F2033 !important;
 }
 /* gradient colors:  #9D67B5, #460FE3*/
@@ -45,7 +45,7 @@ label, .description {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    top: 100%;
+    bottom: 100%;
     left: 0%;
     margin-top: 8px;
 }
@@ -86,6 +86,23 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
 .myButton:hover {
     opacity: 1;
 }
+section {
+    height: calc(100vh - 525px);
+}
+.overflowHide {
+    overflow: hidden;
+}
+.results {
+    display: none;
+    position: relative;
+    top: 1000px;
+    margin-top: 25px;
+}
+.displayResults {
+    transition: all 1s ease-in-out;
+    display: inline-block;
+    top: 0px;
+}
 .result {
     width: 100%;
     max-width: 600px;
@@ -95,7 +112,6 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
 }
 .description {
     display: inline-block;
-    /* width: 70%; */
     flex-grow: 1;
     background: rgb(43,51,56);
     border-radius: 25px 0 0 25px;
@@ -114,26 +130,6 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
 }
 @media (max-width: 767.98px) {
     .answer {
-        min-width: 30%;
+        min-width: 35%;
     }
-}
-
-.tooltiptextLast {
-    visibility: hidden;
-    width: 234px;
-    /* min-height: 38px; */
-    border-radius: 4px;
-    padding: 12px 5px;
-    background: rgb(151,97,185);
-    background: -moz-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    background: -webkit-linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    background: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 0%;
-    margin-bottom: 8px;
 }

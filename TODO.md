@@ -1,4 +1,3 @@
-make lower info buttons bigger
 
 hide answers and then add effects to insert them in a cascading effect
 
