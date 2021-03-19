@@ -6,33 +6,39 @@ const displays = {
     payed: document.querySelector("#payed"),
     insurance: document.querySelector("#insurance"),
     interestTotal: document.querySelector("#interestTotal")
-}  
+}
+const inputs = {};
+var payments = 0;
+var endPrice;
+var monthInterest = 0;
+let counter = 1;
 
 // extracts values from calculator
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const inputs = {
-        price: Number(e.target[0].value),
-        down: Number(e.target[1].value) / 100,
-        interest: Number(e.target[2].value) / 100,
-        period: Number(e.target[3].value)
-    }
+    inputs.price = Number(e.target[0].value),
+    inputs.down = Number(e.target[1].value) / 100,
+    inputs.interest = Number(e.target[2].value) / 100,
+    inputs.period = Number(e.target[3].value)
     calculate(inputs);
+    counter = 1;
+    doPayments(counter * 12, payments, endPrice, monthInterest);
 });
 
 
 function calculate({price, down, interest, period}) {
-    let     months = period * 12,
-            monthInterest = interest / 12;
+    let     months = period * 12;
+    monthInterest = roundtoFour(interest / 12);
     let premium = getCmhcPremium(down) / 100;
     // let premium = 0;
     price *= Math.abs(down-1); // removes downpayment
     let premiumCost = (price * premium); // cost of insurance
     price += premiumCost;
+    endPrice = price; // did this because im lazy
 
     // gets monthly payments
-    let payments = ((price * monthInterest * ((1 + monthInterest) ** (12 * period))) / ((1 + monthInterest) ** (12 * period) - 1)).toFixed(2);
-    let finalCost = (payments * months).toFixed(2);
+    payments = roundtoTwo(((price * monthInterest * ((1 + monthInterest) ** (12 * period))) / ((1 + monthInterest) ** (12 * period) - 1)));
+    let finalCost = roundtoTwo((payments * months));
 
     section.classList.remove("d-none");
     // displays all div displays
@@ -45,6 +51,36 @@ function calculate({price, down, interest, period}) {
     displays.interestTotal.textContent = numberWithSpaces((finalCost - price).toFixed(2));
 
 }
+
+// payed after x amount of years
+const   years = document.querySelector("#years"),
+        principal = document.querySelector("#principal"),
+        interest = document.querySelector("#interest"),
+        left = document.querySelector(".left"),
+        right = document.querySelector(".right");
+
+
+left.addEventListener("click", () => {
+    if (counter === 1) {
+        // do nothing
+        return;
+    }
+    else {
+        counter--;
+        doPayments(counter*12, payments, endPrice, monthInterest);
+    }
+});
+right.addEventListener("click", () => {
+    if (counter === inputs.period) {
+        // do nothing
+        return;
+    }
+    else {
+        counter++;
+        doPayments(counter*12, payments, endPrice, monthInterest);
+    }
+});
+
 
 // The following premium rates were extracted from
 // https://www.cmhc-schl.gc.ca/en/finance-and-investing/mortgage-loan-insurance/mortgage-loan-insurance-homeownership-programs/                 cmhc-mortgage-loan-insurance-cost
@@ -80,4 +116,27 @@ async function displayEffect() {
     await new Promise(r => setTimeout(r, 1000));
     section.classList.remove("overflowHide");
     displayDivs[0].scrollIntoView({ behavior: 'smooth' });
+}
+
+function doPayments(counter, payments, price, monthInterest) {
+    let     interestCount = 0,
+            principalCount = 0;
+    for (let i = 0; i < counter; i++) {
+        let interestPayment = roundtoTwo(price * monthInterest);
+        let principalPayment = roundtoTwo(payments - interestPayment);
+        interestCount += interestPayment;
+        principalCount += principalPayment;
+        price = roundtoTwo(price - principalPayment);
+    }
+    years.textContent = counter/12;
+    principal.textContent = principalCount.toFixed(2);
+    interest.textContent = interestCount.toFixed(2);
+}
+// from
+// https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
+function roundtoTwo(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+}
+function roundtoFour(num) {
+    return Math.round((num + Number.EPSILON) * 10000) / 10000;
 }

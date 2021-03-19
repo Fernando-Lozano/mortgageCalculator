@@ -9,7 +9,7 @@ body {
     background: #1F2033 !important;
 }
 /* gradient colors:  #9D67B5, #460FE3*/
-.calculator {
+.grayGradient {
     width: 300px;
     background: rgb(43,51,56);
     background: -moz-linear-gradient(48deg, rgba(43,51,56,1) 0%, rgba(25,29,32,1) 100%);
@@ -74,8 +74,8 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d089f0",endColorstr="#4c10f7",GradientType=1);
     transition: opacity 0.3s ease-in-out;
 }
-.cardText, .description {
-    color: lightgrey;
+.cardText, .description, .chevron, h5 {
+    color: rgb(238, 238, 238);
 }
 .myButton {
     border: none;
@@ -83,7 +83,7 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
     padding: 0 10px;
     height: 35px;
 }
-.myButton:hover {
+.myButton:hover, .left:hover, .right:hover {
     opacity: 1;
 }
 section {
@@ -93,7 +93,7 @@ section {
     overflow: hidden;
 }
 .results {
-    display: none;
+    display: none; /* might be able to get rid completely*/
     position: relative;
     top: 1000px;
     margin-top: 25px;
@@ -113,7 +113,6 @@ section {
 .description {
     display: inline-block;
     flex-grow: 1;
-    background: rgb(43,51,56);
     border-radius: 25px 0 0 25px;
     box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
     -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
@@ -132,4 +131,26 @@ section {
     .answer {
         min-width: 35%;
     }
+}
+.chevron {
+    color: rgb(139, 80, 175);
+}
+.bigger {
+    padding: 0 5px;
+    font-size: 1.6rem;
+    color: rgb(139, 80, 175);
+}
+.round {
+    width: 46px;
+    border: none;
+    background: transparent;
+}
+.left {
+    border-radius: 25px 0 0 25px;
+}
+.right {
+    border-radius: 0 25px 25px 0;
+}
+p {
+    margin-bottom: 8px !important;
 }

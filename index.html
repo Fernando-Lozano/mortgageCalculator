@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container d-flex justify-content-center">
-        <div class="calculator mt-3">
+        <div class="grayGradient r mt-3">
             <h1 class="display-5 px-3 py-3 text-center cardText">Mortgage</h1>
             <form class="px-2">
                 <div class="mb-3">
@@ -24,7 +24,7 @@
                     <label for="downPayment" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The percentage of the purchase price you plan to pay</span></i> Down payment</label>
                     <div class="input-group">
                         <p class="input-group-text m-0 bgGradient border-0">%</p>
-                        <input step="0.01" type="text" pattern="^[0-9]*.{0,1}[0-9]{0,2}$" title="Must be a decimal number greater than 0" class="form-control" id="downPayment" required>
+                        <input step="0.01" type="number" pattern="^[0-9]*.{0,1}[0-9]{0,2}$" title="Must be a decimal number greater than 0" class="form-control" id="downPayment" required>
 
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     <label for="interestRate" class="form-label cardText"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">This calculation is assuming this will stay the same</span></i> Interest rate</label>
                     <div class="input-group">
                         <p class="input-group-text m-0 bgGradient border-0">%</p>
-                        <input step="0.01" type="text" pattern="^[0-9]*.{0,1}[0-9]{0,2}$" title="Must be a decimal number greater than 0" class="form-control" id="interestRate" required>
+                        <input step="0.01" type="number" pattern="^[0-9]*.{0,1}[0-9]{0,2}$" title="Must be a decimal number greater than 0" class="form-control" id="interestRate" required>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -53,8 +53,29 @@
     </div>
     <section class="d-none overflowHide">
         <div class="results d-flex justify-content-center text-center text-white container">
+            <div class="result grayGradient d-flex">
+                <button class="round left">
+                    <i class="fas fa-chevron-left chevron"></i>
+                </button>
+                <div class="flex-grow-1">
+                    <h5 class="mt-2 mb-3">Payed after <span id="years" class="bigger">25</span> year(s)</h5>
+                    <div class="row px-1">
+                        <div class="col-md-6">
+                            <p>Principal: <span class="bigger" id="principal">$1 000 000.00</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Interest: <span class="bigger" id="interest">$1 000 000.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="round right">
+                    <i class="fas fa-chevron-right chevron"></i>
+                </button>
+            </div>
+        </div>
+        <div class="results d-flex justify-content-center text-center text-white container">
             <div class="result d-flex">
-                <div class="description px-2">
+                <div class="description grayGradient px-2">
                     <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The amount of payments each month (Omitted Bi-weekly for simplicity).</span></i> Monthly payments</p>
                 </div>
                 <div class="answer bgGradient">
@@ -64,7 +85,7 @@
         </div>
         <div class="results d-flex justify-content-center text-center text-white container">
             <div class="result d-flex">
-                <div class="description px-2">
+                <div class="description grayGradient px-2">
                     <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total cost after the Amortization perdiod.</span></i> Final amount payed</p>
                 </div>
                 <div class="answer bgGradient">
@@ -74,7 +95,7 @@
         </div>
         <div class="results d-flex justify-content-center text-center text-white container">
             <div class="result d-flex">
-                <div class="description px-2">
+                <div class="description grayGradient px-2">
                     <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The cost of the insurance premium is added to the mortgage.</span></i> Mortgage insurance</p>
                 </div>
                 <div class="answer bgGradient">
@@ -84,8 +105,8 @@
         </div>
         <div class="results d-flex justify-content-center text-center text-white container">
             <div class="result d-flex">
-                <div class="description px-2">
-                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total interest payed over the entire life of the mortgage.</span></i> Amount of interest payed</p>
+                <div class="description grayGradient px-2">
+                    <p class="my-2 text-start"><i class="fas fa-info-circle text-gradient"><span class="tooltiptext bg-info text-white">The total interest payed over the entire life of the mortgage.</span></i> Interest payed</p>
                 </div>
                 <div class="answer bgGradient">
                     <p class="my-2">$<span id="interestTotal"></span></p>
