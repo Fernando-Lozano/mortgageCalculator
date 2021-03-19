@@ -1,3 +1,4 @@
+/* utilities */
 html {
     box-sizing: border-box;
 }
@@ -5,10 +6,8 @@ html {
     box-sizing: inherit;
 }
 body {
-    /* min-height: 100vh; */
     background: #1F2033 !important;
 }
-/* gradient colors:  #9D67B5, #460FE3*/
 .grayGradient {
     width: 300px;
     background: rgb(43,51,56);
@@ -21,11 +20,16 @@ body {
     -webkit-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
     -moz-box-shadow: 20px 19px 24px 8px rgba(0,0,0,0.22);
 }
-/* @media (orientation: landscape) {
-    .main {
-        min-height: 600px;
-    }
-} */
+.bgGradient {
+    opacity: 0.8;
+    background: rgb(208,137,240);
+    background: -moz-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    background: linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d089f0",endColorstr="#4c10f7",GradientType=1);
+    transition: opacity 0.3s ease-in-out;
+}
+/* input section */
 label, .description {
     position: relative;
     font-weight: bold;
@@ -65,15 +69,6 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
     color: linear-gradient(48deg, rgba(151,97,185,1) 0%, rgba(89,34,218,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9761b9",endColorstr="#5922da",GradientType=1);
 }
-.bgGradient {
-    opacity: 0.8;
-    background: rgb(208,137,240);
-    background: -moz-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
-    background: -webkit-linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
-    background: linear-gradient(48deg, rgba(208,137,240,1) 0%, rgba(76,16,247,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d089f0",endColorstr="#4c10f7",GradientType=1);
-    transition: opacity 0.3s ease-in-out;
-}
 .cardText, .description, .chevron, h5 {
     color: rgb(238, 238, 238);
 }
@@ -86,14 +81,16 @@ i:hover .tooltiptext, i:hover .tooltiptextLast {
 .myButton:hover, .left:hover, .right:hover {
     opacity: 1;
 }
+
+/* output section */
 section {
-    height: calc(100vh - 525px);
+    min-height: calc(100vh - 525px);
 }
 .overflowHide {
     overflow: hidden;
 }
 .results {
-    display: none; /* might be able to get rid completely*/
+    /* display: none; */
     position: relative;
     top: 1000px;
     margin-top: 25px;
@@ -139,11 +136,13 @@ section {
     padding: 0 5px;
     font-size: 1.6rem;
     color: rgb(139, 80, 175);
+    transition: display 5s ease-in-out;
 }
 .round {
     width: 46px;
     border: none;
     background: transparent;
+    touch-action: none;
 }
 .left {
     border-radius: 25px 0 0 25px;

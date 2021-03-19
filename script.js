@@ -5,7 +5,8 @@ const displays = {
     payments: document.querySelector("#payments"),
     payed: document.querySelector("#payed"),
     insurance: document.querySelector("#insurance"),
-    interestTotal: document.querySelector("#interestTotal")
+    interestTotal: document.querySelector("#interestTotal"),
+    afterxYears: document.querySelectorAll(".bigger")
 }
 const inputs = {};
 var payments = 0;
@@ -129,8 +130,8 @@ function doPayments(counter, payments, price, monthInterest) {
         price = roundtoTwo(price - principalPayment);
     }
     years.textContent = counter/12;
-    principal.textContent = principalCount.toFixed(2);
-    interest.textContent = interestCount.toFixed(2);
+    principal.textContent = "$" + numberWithSpaces(principalCount.toFixed(2));
+    interest.textContent = "$" + numberWithSpaces(interestCount.toFixed(2));
 }
 // from
 // https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
